@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
-
 export const Hero = () => {
-  return (
-    <section className="bg-gradient-hero min-h-screen flex items-center py-20">
+  return <section className="bg-gradient-hero min-h-screen flex items-center py-20">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in">
@@ -31,7 +29,7 @@ export const Hero = () => {
 
             <div className="flex items-center gap-8 pt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-foreground">50+</div>
+                <div className="text-3xl font-bold text-foreground">25K+</div>
                 <div className="text-sm text-muted-foreground">Projects Delivered</div>
               </div>
               <div className="text-center">
@@ -47,16 +45,11 @@ export const Hero = () => {
 
           <div className="relative animate-fade-in delay-200">
             <div className="relative z-10">
-              <img 
-                src={heroDashboard} 
-                alt="Modern SaaS Dashboard" 
-                className="w-full h-auto rounded-2xl shadow-hero hover:shadow-xl transition-all duration-500 hover:scale-105"
-              />
+              <img src={heroDashboard} alt="Modern SaaS Dashboard" className="w-full h-auto rounded-2xl shadow-hero hover:shadow-xl transition-all duration-500 hover:scale-105" />
             </div>
             <div className="absolute -top-6 -right-6 w-full h-full bg-gradient-primary rounded-2xl opacity-20 -z-10"></div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };

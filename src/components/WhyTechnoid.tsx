@@ -25,8 +25,12 @@ const features = [
 
 export const WhyTechnoid = () => {
   return (
-    <section className="py-24 bg-gradient-subtle">
-      <div className="container mx-auto px-6">
+    <section id="why-technoid" className="py-24 relative">
+      {/* Translucent background with primary colors */}
+      <div className="absolute inset-0 bg-gradient-primary opacity-10"></div>
+      <div className="absolute inset-0 bg-primary/5"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
             Why Choose Technoid?
@@ -43,7 +47,7 @@ export const WhyTechnoid = () => {
               className="text-center group animate-fade-in"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="mx-auto w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 shadow-card group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
+              <div className="mx-auto w-20 h-20 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center mb-6 shadow-card group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
                 <feature.icon className="w-10 h-10 text-primary" />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4">

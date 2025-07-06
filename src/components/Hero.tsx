@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
 export const Hero = () => {
-  return <section className="bg-gradient-hero min-h-screen flex items-center py-20">
+  return <section className="bg-gradient-hero min-h-screen flex items-center py-20 pt-32">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in">

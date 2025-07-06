@@ -26,7 +26,9 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <Code className="w-8 h-8 text-primary" />
+              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">T</span>
+              </div>
               <span className="text-2xl font-bold">Technoid</span>
             </div>
             <p className="text-white/80 leading-relaxed">

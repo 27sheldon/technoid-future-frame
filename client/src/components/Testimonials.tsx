@@ -2,44 +2,44 @@
 
 const clientLogos = [
   {
-    name: "Community Health",
-    logo: "https://upload.wikimedia.org/wikipedia/en/5/5e/Community_Health_Center_Logo.png",
+    name: "Microsoft",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoft.svg",
   },
   {
-    name: "Morgan Stanley",
-    logo: "https://1000logos.net/wp-content/uploads/2021/06/Morgan-Stanley-Logo.png",
+    name: "Google",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg",
   },
   {
-    name: "FINRA",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/FINRA_logo.svg/2560px-FINRA_logo.svg.png",
+    name: "Apple",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/apple.svg",
   },
   {
-    name: "Catalina",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Catalina_Marketing_logo.png",
+    name: "Amazon",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/amazon.svg",
   },
   {
-    name: "Bridgestone",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Bridgestone_logo.svg/2560px-Bridgestone_logo.svg.png",
+    name: "Netflix",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/netflix.svg",
   },
   {
-    name: "AT&T",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/f/f2/AT%26T_logo_2016.svg",
+    name: "Tesla",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tesla.svg",
   },
   {
-    name: "21st Century Fox",
-    logo: "https://upload.wikimedia.org/wikipedia/en/5/52/21st_Century_Fox_logo_2013.png",
+    name: "Meta",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/meta.svg",
   },
   {
-    name: "Tory Burch",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/8/83/Tory_Burch_logo.svg",
+    name: "Adobe",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/adobe.svg",
   },
   {
-    name: "Munich RE",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Munich_Re_Logo.svg",
+    name: "Spotify",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/spotify.svg",
   },
   {
-    name: "Match",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Match_logo.svg/2560px-Match_logo.svg.png",
+    name: "Airbnb",
+    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/airbnb.svg",
   },
 ];
 
@@ -68,6 +68,14 @@ export const Testimonials = () => {
                   src={client.logo}
                   alt={`${client.name} logo`}
                   className="max-w-24 max-h-12 object-contain filter grayscale hover:grayscale-0 transition-all"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      parent.innerHTML = `<div class="text-sm font-medium text-gray-600">${client.name}</div>`;
+                    }
+                  }}
                 />
               </div>
             ))}

@@ -1,46 +1,10 @@
-// src/components/Testimonials.tsx
-
 const clientLogos = [
-  {
-    name: "Microsoft",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoft.svg",
-  },
-  {
-    name: "Google",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg",
-  },
-  {
-    name: "Apple",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/apple.svg",
-  },
-  {
-    name: "Amazon",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/amazon.svg",
-  },
-  {
-    name: "Netflix",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/netflix.svg",
-  },
-  {
-    name: "Tesla",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tesla.svg",
-  },
-  {
-    name: "Meta",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/meta.svg",
-  },
-  {
-    name: "Adobe",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/adobe.svg",
-  },
-  {
-    name: "Spotify",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/spotify.svg",
-  },
-  {
-    name: "Airbnb",
-    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/airbnb.svg",
-  },
+  { name: "AT&T", logo: "/src/assets/att.jpeg" },
+  { name: "Bridgestone", logo: "/src/assets/bridgestone.png" },
+  { name: "Fox", logo: "/src/assets/fox.png" },
+  { name: "PVH", logo: "/src/assets/pvh.png" },
+  { name: "Tory Burch", logo: "/src/assets/tory.png" },
+  { name: "Washington", logo: "/src/assets/washington.png" },
 ];
 
 export const Testimonials = () => {
@@ -85,3 +49,4 @@ export const Testimonials = () => {
     </section>
   );
 };
+

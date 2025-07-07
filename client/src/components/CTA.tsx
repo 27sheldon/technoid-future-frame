@@ -3,7 +3,9 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 
 export const CTA = () => {
   return (
-    <section className="py-24 bg-gradient-primary">
+      <section
+        className="py-24 backdrop-blur-sm bg-[linear-gradient(135deg,hsl(4,81%,45%,0.9),hsl(4,81%,35%,0.9))]"
+      >
       <div className="container mx-auto px-6">
         <div className="text-center space-y-8">
           <div className="space-y-4">

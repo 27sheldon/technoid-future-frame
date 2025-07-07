@@ -1,105 +1,120 @@
-import { Card, CardContent } from "@/components/ui/card";
+// src/components/Services.tsx
 
-const teamMembers = [
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+import SaaSImg from "@/assets/SaaS.png";
+import InternalImg from "@/assets/internal.png";
+import ERPImg from "@/assets/ERP.png";
+import StaffingImg from "@/assets/staffing.png"; // ✅ Use the image you just uploaded
+
+const services = [
   {
-    name: "John Smith",
-    title: "CEO & Founder",
-    photo: "/placeholder.svg"
+    title: "SaaS Development",
+    description:
+      "Custom SaaS platforms built for scale, performance, and user experience. From MVP to enterprise-grade solutions.",
+    features: [
+      "React & Node.js",
+      "Cloud Architecture",
+      "API Development",
+      "Database Design",
+    ],
+    imageUrl: SaaSImg,
   },
   {
-    name: "Sarah Johnson",
-    title: "CTO",
-    photo: "/placeholder.svg"
+    title: "Internal Tools",
+    description:
+      "Streamline your operations with custom internal tools that integrate seamlessly with your existing workflows.",
+    features: [
+      "Process Automation",
+      "Dashboard Creation",
+      "Workflow Tools",
+      "Team Collaboration",
+    ],
+    imageUrl: InternalImg,
   },
   {
-    name: "Michael Chen",
-    title: "Lead Developer",
-    photo: "/placeholder.svg"
+    title: "ERP Integration",
+    description:
+      "Connect and optimize your business systems with seamless ERP integrations and data synchronization.",
+    features: [
+      "System Integration",
+      "Data Migration",
+      "API Connections",
+      "Process Optimization",
+    ],
+    imageUrl: ERPImg,
   },
   {
-    name: "Emily Rodriguez",
-    title: "UI/UX Designer",
-    photo: "/placeholder.svg"
+    title: "IT Staffing",
+    description:
+      "Strategic staffing solutions to help you build and scale high-performing tech teams quickly and cost-effectively.",
+    features: [
+      "Dedicated Developers",
+      "Flexible Hiring Models",
+      "Talent Screening",
+      "Contract & Full-Time Staff",
+    ],
+    imageUrl: StaffingImg,
   },
-  {
-    name: "David Wilson",
-    title: "DevOps Engineer",
-    photo: "/placeholder.svg"
-  },
-  {
-    name: "Lisa Thompson",
-    title: "Project Manager",
-    photo: "/placeholder.svg"
-  },
-  {
-    name: "Alex Kumar",
-    title: "Backend Developer",
-    photo: "/placeholder.svg"
-  },
-  {
-    name: "Rachel Green",
-    title: "Quality Assurance",
-    photo: "/placeholder.svg"
-  }
 ];
 
-export const AboutUs = () => {
+export const Services = () => {
   return (
-    <section id="about" className="py-24 bg-gradient-subtle">
+    <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
-            About Us
+            Our Services
           </h2>
-          <div className="max-w-4xl mx-auto">
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              At Technoid, we are passionate about transforming businesses through innovative software solutions. 
-              Founded with a vision to bridge the gap between cutting-edge technology and practical business needs, 
-              we have grown into a trusted partner for enterprises seeking digital transformation. Our team combines 
-              technical excellence with deep industry knowledge to deliver solutions that not only meet current 
-              requirements but also scale for future growth. We believe in building long-term relationships with 
-              our clients, understanding their unique challenges, and crafting bespoke solutions that drive 
-              measurable business impact.
-            </p>
-          </div>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Comprehensive software solutions tailored to your business needs
+          </p>
         </div>
 
-        {/* Team Section */}
-        <div className="space-y-12">
-          <div className="text-center">
-            <h3 className="text-3xl font-bold text-foreground mb-4">Our Team</h3>
-            <p className="text-lg text-muted-foreground">
-              Meet the talented individuals who make our success possible
-            </p>
-          </div>
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {services.map((service, index) => (
+            <Card
+              key={service.title}
+              className="group hover:shadow-card transition-all duration-300 hover:scale-105 border-0 shadow-sm hover:shadow-lg"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <CardHeader className="text-center pb-4">
+                <div className="w-full h-60 rounded-2xl overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
+                  <img
+                    src={service.imageUrl}
+                    alt={service.title}
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
+                </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card 
-                key={member.name}
-                className="group hover:shadow-card transition-all duration-300 hover:scale-105 border-0 shadow-sm hover:shadow-lg animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <CardContent className="p-6 text-center space-y-4">
-                  <div className="mx-auto w-24 h-24 rounded-full overflow-hidden bg-muted">
-                    <img 
-                      src={member.photo} 
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-foreground">
-                      {member.name}
-                    </h4>
-                    <p className="text-sm text-primary font-medium">
-                      {member.title}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                <CardTitle className="text-xl font-semibold text-foreground">
+                  {service.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <CardDescription className="text-muted-foreground leading-relaxed">
+                  {service.description}
+                </CardDescription>
+                <ul className="space-y-2">
+                  {service.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-center text-sm text-muted-foreground"
+                    >
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

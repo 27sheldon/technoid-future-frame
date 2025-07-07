@@ -1,3 +1,5 @@
+// src/components/Services.tsx
+
 import {
   Card,
   CardContent,
@@ -9,7 +11,7 @@ import {
 import SaaSImg from "@/assets/SaaS.png";
 import InternalImg from "@/assets/internal.png";
 import ERPImg from "@/assets/ERP.png";
-// import StaffingImg from "@/assets/staffing.png"; // Uncomment when you add the image
+import StaffingImg from "@/assets/Staffing.png"; // ✅ Use the image you just uploaded
 
 const services = [
   {
@@ -48,18 +50,18 @@ const services = [
     ],
     imageUrl: ERPImg,
   },
-  // {
-  //   title: "IT Staffing",
-  //   description:
-  //     "Strategic human resources and staffing solutions to build high-performing technology teams for your organization.",
-  //   features: [
-  //     "Tech Talent Acquisition",
-  //     "Team Scaling",
-  //     "Skills Assessment",
-  //     "Contract & Permanent Placement",
-  //   ],
-  //   imageUrl: StaffingImg,
-  // },
+  {
+    title: "IT Staffing",
+    description:
+      "Strategic staffing solutions to help you build and scale high-performing tech teams quickly and cost-effectively.",
+    features: [
+      "Dedicated Developers",
+      "Flexible Hiring Models",
+      "Talent Screening",
+      "Contract & Full-Time Staff",
+    ],
+    imageUrl: StaffingImg,
+  },
 ];
 
 export const Services = () => {

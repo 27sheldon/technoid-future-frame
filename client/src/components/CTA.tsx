@@ -1,5 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
+import { Input } from "@/components/ui/input";
+
 
 export const CTA = () => {
   return (
@@ -18,22 +28,34 @@ export const CTA = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              variant="outline-white" 
-              size="lg" 
-              className="group text-lg px-8 py-4 h-auto"
-            >
-              <MessageCircle className="group-hover:scale-110 transition-transform" />
-              Get Free Consultation
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              variant="outline-white" 
-              size="lg" 
-              className="text-lg px-8 py-4 h-auto hover:scale-105 transition-all"
-            >
-              View Case Studies
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  variant="outline-white" 
+                  size="lg" 
+                  className="group text-lg px-8 py-4 h-auto"
+                >
+                  <MessageCircle className="group-hover:scale-110 transition-transform" />
+                  Get Free Consultation
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md bg-white text-black">
+                <DialogHeader>
+                  <DialogTitle>Get Free Consultation</DialogTitle>
+                </DialogHeader>
+                <form onSubmit={(e) => {
+                  e.preventDefault();
+                  alert("Form submitted (you can integrate backend later)");
+                }} className="space-y-4">
+                  <Input placeholder="Name" required />
+                  <Input type="email" placeholder="Email" required />
+                  <Input type="tel" placeholder="Phone Number" required />
+                  <Input placeholder="Company (optional)" />
+                  <Button type="submit" className="w-full">Submit</Button>
+                </form>
+              </DialogContent>
+            </Dialog>
           </div>
 
           <div className="pt-8 flex flex-col sm:flex-row justify-center items-center gap-8 text-white/80">

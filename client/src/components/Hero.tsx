@@ -1,6 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+
 export const Hero = () => {
   return <section className="bg-gradient-hero min-h-screen flex items-center py-20 pt-32">
       <div className="container mx-auto px-6">
@@ -8,9 +17,13 @@ export const Hero = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-6">
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-foreground">
-                Building Tomorrow's
-                <span className="text-primary block">Software, Today.</span>
+                <span className="text-primary">Building</span>
+                <br />
+                <span className="text-4xl lg:text-5xl">Tomorrow's Software,</span>
+                <br />
+                <span className="text-primary">Today.</span>
               </h1>
+
               <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
                 We're a software-first IT consultancy specializing in SaaS development, 
                 enterprise tools, and digital transformation that drives real business impact.
@@ -18,14 +31,30 @@ export const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="group">
-                Start Your Project
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" size="lg" className="hover:scale-105 transition-all">
-                View Our Work
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="hero" size="lg" className="group">
+                    Start Your Project
+                    <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>Let's Get Started</DialogTitle>
+                  </DialogHeader>
+                  <form className="space-y-4">
+                    <Input type="text" placeholder="Full Name" required />
+                    <Input type="email" placeholder="Email Address" required />
+                    <Input type="tel" placeholder="Phone Number" required />
+                    <Input type="text" placeholder="Company Name" />
+                    <Button type="submit" className="w-full">Submit</Button>
+                  </form>
+                </DialogContent>
+              </Dialog>
+
+              
             </div>
+
 
             <div className="flex items-center gap-8 pt-8">
               <div className="text-center">

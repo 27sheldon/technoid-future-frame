@@ -1,120 +1,55 @@
-// src/components/Services.tsx
+import { Briefcase, Code, Globe, Users } from "lucide-react";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
-import SaaSImg from "@/assets/SaaS.png";
-import InternalImg from "@/assets/internal.png";
-import ERPImg from "@/assets/ERP.png";
-import StaffingImg from "@/assets/staffing.png"; // ✅ Use the image you just uploaded
-
-const services = [
-  {
-    title: "SaaS Development",
-    description:
-      "Custom SaaS platforms built for scale, performance, and user experience. From MVP to enterprise-grade solutions.",
-    features: [
-      "React & Node.js",
-      "Cloud Architecture",
-      "API Development",
-      "Database Design",
-    ],
-    imageUrl: SaaSImg,
-  },
-  {
-    title: "Internal Tools",
-    description:
-      "Streamline your operations with custom internal tools that integrate seamlessly with your existing workflows.",
-    features: [
-      "Process Automation",
-      "Dashboard Creation",
-      "Workflow Tools",
-      "Team Collaboration",
-    ],
-    imageUrl: InternalImg,
-  },
-  {
-    title: "ERP Integration",
-    description:
-      "Connect and optimize your business systems with seamless ERP integrations and data synchronization.",
-    features: [
-      "System Integration",
-      "Data Migration",
-      "API Connections",
-      "Process Optimization",
-    ],
-    imageUrl: ERPImg,
-  },
-  {
-    title: "IT Staffing",
-    description:
-      "Strategic staffing solutions to help you build and scale high-performing tech teams quickly and cost-effectively.",
-    features: [
-      "Dedicated Developers",
-      "Flexible Hiring Models",
-      "Talent Screening",
-      "Contract & Full-Time Staff",
-    ],
-    imageUrl: StaffingImg,
-  },
-];
-
-export const Services = () => {
+export const AboutUs = () => {
   return (
-    <section id="services" className="py-24 bg-background">
+    <section id="about" className="py-24 relative">
+      {/* Translucent background with primary colors */}
+      <div className="absolute inset-0 bg-gradient-primary opacity-10"></div>
+      <div className="absolute inset-0 bg-primary/5"></div>
+      
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-16 space-y-4 max-w-4xl mx-auto">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
-            Our Services
+            About Us
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive software solutions tailored to your business needs
+          <p className="text-xl text-muted-foreground leading-relaxed">
+            At Technoid, we build intelligent digital products and platforms for fast-growing companies and global enterprises.
+            With a team rooted in engineering, design, and innovation, we deliver tailored software that transforms how businesses operate.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {services.map((service, index) => (
-            <Card
-              key={service.title}
-              className="group hover:shadow-card transition-all duration-300 hover:scale-105 border-0 shadow-sm hover:shadow-lg"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <CardHeader className="text-center pb-4">
-                <div className="w-full h-60 rounded-2xl overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300">
-                  <img
-                    src={service.imageUrl}
-                    alt={service.title}
-                    className="w-full h-full object-cover rounded-2xl"
-                  />
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="text-center space-y-4 p-6 bg-white shadow-md rounded-2xl">
+            <Briefcase className="mx-auto w-10 h-10 text-primary" />
+            <h3 className="text-xl font-semibold text-foreground">Business-Centric</h3>
+            <p className="text-muted-foreground text-sm">
+              We solve real business problems with scalable, reliable technology that adapts as you grow.
+            </p>
+          </div>
 
-                <CardTitle className="text-xl font-semibold text-foreground">
-                  {service.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <CardDescription className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </CardDescription>
-                <ul className="space-y-2">
-                  {service.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-center text-sm text-muted-foreground"
-                    >
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+          <div className="text-center space-y-4 p-6 bg-white shadow-md rounded-2xl">
+            <Code className="mx-auto w-10 h-10 text-primary" />
+            <h3 className="text-xl font-semibold text-foreground">Engineering Excellence</h3>
+            <p className="text-muted-foreground text-sm">
+              Our software is built with precision, using modern tools and best practices across full-stack development.
+            </p>
+          </div>
+
+          <div className="text-center space-y-4 p-6 bg-white shadow-md rounded-2xl">
+            <Users className="mx-auto w-10 h-10 text-primary" />
+            <h3 className="text-xl font-semibold text-foreground">Human-First</h3>
+            <p className="text-muted-foreground text-sm">
+              We listen closely, iterate quickly, and partner deeply with our clients to create meaningful results.
+            </p>
+          </div>
+
+          <div className="text-center space-y-4 p-6 bg-white shadow-md rounded-2xl">
+            <Globe className="mx-auto w-10 h-10 text-primary" />
+            <h3 className="text-xl font-semibold text-foreground">Global Impact</h3>
+            <p className="text-muted-foreground text-sm">
+              We serve organizations across continents—delivering global reach with local understanding.
+            </p>
+          </div>
         </div>
       </div>
     </section>

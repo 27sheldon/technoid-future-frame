@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import Logo from "@/assets/logo.png"; // <-- Add this import at the top
+import Logo from "@/assets/logo.png";
 
 export const Header = () => {
   return (
@@ -8,14 +8,13 @@ export const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
 
-          {/* Logo Image Section */}
+          {/* Logo Image Section - Restored to original size */}
           <div className="flex items-center space-x-2">
             <img
               src={Logo}
               alt="Technoid Logo"
               className="h-20 max-w-[220px] object-contain drop-shadow-md"
             />
-
           </div>
 
           {/* Navigation - Desktop */}
@@ -39,22 +38,11 @@ export const Header = () => {
               href="https://technoidai.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="font-semibold text-primary transition-colors"
             >
               Technoid India
             </a>
-
           </nav>
-
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
-              Get Quote
-            </Button>
-            <Button variant="default" size="sm">
-              Start Project
-            </Button>
-          </div>
 
           {/* Mobile Menu Button */}
           <Button variant="ghost" size="icon" className="md:hidden">
